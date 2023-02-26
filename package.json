@@ -1,0 +1,26 @@
+{
+  "name": "edunaco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edunacoadmin/Edunaco.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/Edunacoadmin/Edunaco/issues"
+  },
+  "homepage": "https://github.com/Edunacoadmin/Edunaco#readme",
+  "packageManager": "yarn@3.4.1"
+}

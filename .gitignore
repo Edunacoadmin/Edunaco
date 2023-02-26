@@ -1,0 +1,60 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+.next/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+.idea
+node_modules
+env/.env
+static/locales/**/*.missing.json
+static/locales/**/*.MISSING.json
+.logs/
+.history/
+cypress/videos/
+cypress/screenshots/
+sessions/
+dist/
+yarn-error.log
+jest-screenshot-report
+/**/*.stackdump
+/**/*.log
+/**/*.tsbuildinfo
+
+# yarn https://yarnpkg.com/getting-started/qa/#which-files-should-be-gitignored
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+/packages/edee-registration/http-client.private.env.json
+
+http-client.private.env.json

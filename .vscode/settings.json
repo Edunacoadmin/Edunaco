@@ -1,0 +1,19 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  // "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  // "typescript.enablePromptUseWorkspaceTsdk": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "jsx",
+    "typescript": "ts",
+    "ts": "js",
+    "js": "js"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.preferences.quoteStyle": "single"
+}
