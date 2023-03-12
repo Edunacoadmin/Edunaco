@@ -1,0 +1,102 @@
+"""Bojetice 101, Dobrovice, 29441"""
+input Address {
+  destination: String
+}
+
+type Coordinates {
+  coordinates: [Float]
+}
+
+interface Count {
+  count: Int
+}
+
+interface Error {
+  error: String
+}
+
+input Filter {
+  educationStyle: String
+  entity: String
+  evaluation: String
+  inRegistry: Boolean
+  type: String
+}
+
+type Geo implements Count & Error {
+  count: Int
+  data: [GeoItem]
+  error: String
+}
+
+type GeoItem {
+  address: String
+  importance: Float
+  lat: Float
+  lon: Float
+}
+
+type Item {
+  city: String
+  combinedStudy: Boolean
+  contact: String
+  educationStyle: String
+  email: String
+  entity: String
+  evaluation: String
+  id: String
+  inRegistry: Boolean
+  individualTuition: Boolean
+  location: Coordinates
+  phone: String
+  portfolioCheck: Boolean
+  postCode: String
+  street: String
+  subEntity: String
+  title: String
+  type: String
+  www: String
+}
+
+input Location {
+  lat: Float
+  lon: Float
+}
+
+type Mutation {
+  setGeo(id: String, location: Location): Object
+}
+
+type Object implements Count & Error {
+  count: Int
+  data: Item
+  error: String
+}
+
+type Objects implements Count & Error {
+  count: Int
+  data: [Item]
+  error: String
+}
+
+input Page {
+  limit: Int
+  skip: Int
+}
+
+type Query {
+  filterObjects(filter: Filter, page: Page, sort: Sort): Objects
+  geo(address: Address): Geo
+  object(id: String!): Object
+  searchObjects(page: Page, search: Search, sort: Sort): Objects
+  status: String
+}
+
+input Search {
+  value: String
+}
+
+input Sort {
+  dir: Int
+  field: String
+}

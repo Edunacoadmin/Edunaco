@@ -1,4 +1,8 @@
 {
+  // "tailwindCSS.experimental.classRegex": [
+  //   ["/\\* tw \\*/ ([^;]*);", "[`]([^`]*)[`]"],
+  //   ["/\\* tw \\*/ ([^;]*);", "[']([^']*)[']"]
+  // ],
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
@@ -9,6 +13,7 @@
     "plaintext": "jsx",
     "typescript": "ts",
     "ts": "js",
+    "tsx": "jsx",
     "js": "js"
   },
   "editor.formatOnSave": true,

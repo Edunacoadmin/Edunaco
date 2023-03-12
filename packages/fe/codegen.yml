@@ -1,0 +1,6 @@
+overwrite: true
+schema: http://64.227.112.209:8082/graphql
+generates:
+  ./schema.graphql:
+    plugins:
+      - schema-ast

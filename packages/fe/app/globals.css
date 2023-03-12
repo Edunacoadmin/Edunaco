@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    padding: 12px 29px 14px;
+    border-radius: 43px;
+  }
+}
