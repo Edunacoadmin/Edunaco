@@ -3,9 +3,9 @@ import { Button } from '@/components/form/button/Button'
 import { Icon } from '@/components/icon/Icon'
 import { Tile } from '@/components/tile/Tile'
 
-export async function generateMetadata({ params, searchParams }) {
-  return { title: '...' }
-}
+// export async function generateMetadata({ params, searchParams }) {
+//   return { title: '...' }
+// }
 
 export default function Blog() {
   return (

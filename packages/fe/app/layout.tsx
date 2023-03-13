@@ -26,8 +26,8 @@ export default function RootLayout({
     <html lang="cs" className={`h-full bg-yellow ${reenie.variable} ${satoshi.variable} text-blue`}>
       <head />
       <body className='p-2.5 sm:p-5 h-full'>
-        <div className='bg-white shadow-page'>
-          <div className='grid grid-rows-page'>
+        <div className='bg-white shadow-page pb-23'>
+          <div className='grid grid-rows-page md:grid-rows-mdPage'>
             <Header></Header>
             {children}
           </div>

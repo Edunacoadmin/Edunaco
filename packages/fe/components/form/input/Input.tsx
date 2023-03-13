@@ -1,9 +1,11 @@
+'use client';
 import { FC, HTMLInputTypeAttribute, useState } from 'react';
-// import { useFormContext } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 
 export interface InputProps {
   name: string;
   label: string;
+  placeholder?: string;
   info?: string;
   required?: boolean;
   type?: HTMLInputTypeAttribute;
@@ -18,10 +20,9 @@ export const Input: FC<InputProps> = function ({
   required = false,
   type = 'text',
   injectedError,
-  inGrid = false
+  placeholder = ''
 }) {
-  // const { register, formState: { errors } } = useFormContext();
-  const errors: any = {}
+  const { register, formState: { errors } } = useFormContext();
   return (
     <div className={'w-full'}>
       <div className={`w-full relative group bg-gray-100 rounded focus-within:outline focus-within:outline-2 focus-within:outline-primary ` +
@@ -30,9 +31,9 @@ export const Input: FC<InputProps> = function ({
         <input
           type={type}
           id={name}
-          placeholder=" "
+          placeholder={placeholder}
           className={`w-full h-10 px-4 text-sm peer bg-transparent outline-none`}
-        // {...register(name)}
+          {...register(name)}
         />
         <label htmlFor={name} className="
         ">
@@ -41,7 +42,7 @@ export const Input: FC<InputProps> = function ({
 
 
       </div>
-      {errors[name] != null && <div className='text-xxs text-red font-medium opacity-48 mt-1'>{errors[name].message || errors[name].type}</div>}
+      {/* {errors[name] != null && <div className='text-xxs text-red font-medium opacity-48 mt-1'>{errors?.[name]?.message || errors?.[name]?.type}</div>} */}
       {injectedError != null && <div className='text-xxs text-red font-medium opacity-48 mt-1'>{injectedError.message}</div>}
       {info != null && <div className='text-xxs text-gray-dark font-medium opacity-48 mt-1'>{info}</div>}
     </div>

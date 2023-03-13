@@ -43,6 +43,7 @@ module.exports = {
         600: '#C1C1BB',
         700: '#DDDDD9',
         800: '#D7D7D3',
+        900: '#E6E6E6',
       },
       blue: {
         100: '#4489EF',
@@ -125,17 +126,34 @@ module.exports = {
             lineHeight: '44px',
           },
         ],
+        schoolsTile: [
+          '26px',
+          {
+            lineHeight: '28px',
+          },
+        ],
       },
+      lineHeight: {
+        0: '0',
+      },
+
       boxShadow: {
         page: '0px 0px 20px #00000029',
         cards: '16px 16px 60px #1A293E17',
         card: '16px 16px 60px #1A293E29;',
       },
       gridTemplateRows: {
-        page: '115px 1fr 66px',
+        page: '60px 1fr',
+        mdPage: '115px 1fr',
       },
       gridTemplateColumns: {
         headerIlustaration: '445px 1fr',
+        filterPage: '363px 1fr',
+      },
+
+      backgroundImage: {
+        hero: "url('/motives/hp.png')",
+        footer: "url('/motives/footer.png')",
       },
     },
   },

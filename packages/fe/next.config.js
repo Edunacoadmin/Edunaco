@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   reactStrictMode: true,
-  images: ['picsum.photos'],
+  images: { domains: ['picsum.photos'] },
 };
 
 module.exports = nextConfig;

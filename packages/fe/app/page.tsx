@@ -1,4 +1,5 @@
 import { Button } from '@/components/form/button/Button'
+import { Form } from '@/components/form/Form'
 import { Input } from '@/components/form/input/Input'
 import { Icon } from '@/components/icon/Icon'
 import { Tile } from '@/components/tile/Tile'
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <section>
-        <div className='pl-7.5 pt-14 pb-20 container grid grid-cols-headerIlustaration'>
+        <div className='pl-7.5 pt-14 pb-20 container grid grid-cols-headerIlustaration bg-hero bg-no-repeat bg-right-bottom'>
           <div>
             <h2 className='font-reenie text-annotationHp'>Vzdeláváním k sobe</h2>
             <h1 className='font-light text-headlineHp text-yellow'>
@@ -24,13 +25,13 @@ export default function Home() {
       </section>
 
       <section className='bg-gray-100 pt-17 pb-23'>
-        <div className='container text-center '>
+        <div className='container text-center'>
           <h3 className='text-lg leading-6 font-bold text-left inline-block px-10 bg-gray-100 relative z-10'>
             Co u nás<br /><span className='text-headlineWithAnnotation font-light'>Najdete</span>
           </h3>
-          <div className='grid grid-cols-4 shadow-cards border border-gray-600 bg-white text-left mt-7'>
-            <div className='relative before:content-[""] before:absolute before:-top-[60px] before:right-0 before:h-[60px] before:w-[1px] before:bg-gray-600 after:w-full after:h-[1px] after:bg-gray-600 after:block after:absolute after:-top-[60px] after:-right-full'>
-              <div className='hover:bg-yellow hover:shadow-card pl-18 pr-12 pt-10 pb-18 border-r border-r-gray-600 group hover:border-none hover:absolute hover:-top-6 hover:-bottom-14 hover:-left-2.5 hover:pt-16 hover:pl-[82px] cursor-pointer transition-shadow'>
+          <div className='grid grid-cols-1 lg:grid-cols-4 shadow-cards border border-gray-600 bg-white text-left mt-7'>
+            <div className='relative before:hidden md:before:block after:hidden md:after:block before:content-[""] before:absolute before:-top-[60px] before:right-0 before:h-[60px] before:w-[1px] before:bg-gray-600 after:w-full after:h-[1px] after:bg-gray-600 after:absolute after:-top-[60px] after:-right-full'>
+              <div className='pl-18 pr-12 pt-10 pb-18 border-b border-b-gray-600 lg:border-b-0 lg:border-r border-r-gray-600 group lg:hover:bg-yellow lg:hover:shadow-card lg:hover:border-none lg:hover:absolute lg:hover:-top-6 lg:hover:-bottom-14 lg:hover:-left-2.5 lg:hover:pt-16 lg:hover:pl-[82px] cursor-pointer transition-shadow'>
                 <Icon icon='branch' width='58px' height='41px' />
                 <h4 className='text-2xl leading-snug text-blue-100 group-hover:text-blue mt-1.5 mb-3'>
                   Alternativy<br></br> běžného vzdělávání
@@ -39,13 +40,13 @@ export default function Home() {
                   Zjistěte, co vše je možné.
                   Consectetur adipiscing elit. Aenean euismod.
                 </p>
-                <div className='hidden group-hover:block mt-6'>
+                <div className='hidden lg:group-hover:block mt-6'>
                   <Button href='/o-nas' label='Prohlédnout' style='secondary'></Button>
                 </div>
               </div>
             </div>
             <div className='relative'>
-              <div className='hover:bg-yellow hover:shadow-card pl-18 pr-12 pt-10 pb-18 border-r border-r-gray-600 group hover:border-none hover:absolute hover:-top-6 hover:-bottom-14 hover:-right-[5px] hover:-left-[5px] hover:pl-[77px] hover:pt-16 cursor-pointer transition-shadow'>
+              <div className='lg:hover:bg-yellow lg:hover:shadow-card pl-18 pr-12 pt-10 pb-18 border-b border-b-gray-600 lg:border-b-0 lg:border-r border-r-gray-600 group lg:hover:border-none lg:hover:absolute lg:hover:-top-6 lg:hover:-bottom-14 lg:hover:-right-[5px] lg:hover:-left-[5px] lg:hover:pl-[77px] lg:hover:pt-16 cursor-pointer transition-shadow'>
                 <Icon icon='map' width='58px' height='41px' />
                 <h4 className='text-2xl leading-snug text-blue-100 group-hover:text-blue mt-1.5 mb-3'>
                   Katalog<br></br>
@@ -55,13 +56,13 @@ export default function Home() {
                   Zjistěte, co vše je možné.
                   Consectetur adipiscing elit. Aenean euismod.
                 </p>
-                <div className='hidden group-hover:block mt-6'>
+                <div className='hidden lg:group-hover:block mt-6'>
                   <Button href='/o-nas' label='Prohlédnout' style='secondary'></Button>
                 </div>
               </div>
             </div>
-            <div className='relative after:content-[""] after:absolute after:-top-[60px] after:right-0 after:h-[60px] after:w-[1px] after:bg-gray-600 before:w-full before:h-[1px] before:bg-gray-600 before:block before:absolute before:-top-[60px]'>
-              <div className='hover:bg-yellow hover:shadow-card pl-18 pr-12 pt-10 pb-18 border-r border-r-gray-600 group hover:border-none hover:absolute hover:-top-6 hover:-bottom-14 hover:-right-[5px] hover:-left-[5px] hover:pl-[77px] hover:pt-16 cursor-pointer transition-shadow'>
+            <div className='relative after:hidden lg:after:block before:hidden lg:before:block after:content-[""] after:absolute after:-top-[60px] after:right-0 after:h-[60px] after:w-[1px] after:bg-gray-600 before:w-full before:h-[1px] before:bg-gray-600 before:absolute before:-top-[60px]'>
+              <div className='lg:hover:bg-yellow lg:hover:shadow-card pl-18 pr-12 pt-10 pb-18 border-b border-b-gray-600 lg:border-b-0 lg:border-r border-r-gray-600 group lg:hover:border-none lg:hover:absolute lg:hover:-top-6 lg:hover:-bottom-14 lg:hover:-right-[5px] lg:hover:-left-[5px] lg:hover:pl-[77px] lg:hover:pt-16 cursor-pointer transition-shadow'>
                 <Icon icon='blocks' width='58px' height='41px' />
                 <h4 className='text-2xl leading-snug text-blue-100 group-hover:text-blue mt-1.5 mb-3'>
                   Alternativní<br></br>
@@ -71,13 +72,13 @@ export default function Home() {
                   Zjistěte, co vše je možné.
                   Consectetur adipiscing elit. Aenean euismod.
                 </p>
-                <div className='hidden group-hover:block mt-6'>
+                <div className='hidden lg:group-hover:block mt-6'>
                   <Button href='/o-nas' label='Prohlédnout' style='secondary'></Button>
                 </div>
               </div>
             </div>
             <div className='relative'>
-              <div className='hover:bg-yellow hover:shadow-card pl-18 pr-12 pt-10 pb-18 group hover:absolute hover:-top-6 hover:-bottom-14 hover:-right-2.5 hover:pt-16 cursor-pointer transition-shadow'>
+              <div className='lg:hover:bg-yellow lg:hover:shadow-card pl-18 pr-12 pt-10 pb-18 group lg:hover:absolute lg:hover:-top-6 lg:hover:-bottom-14 lg:hover:-right-2.5 lg:hover:pt-16 cursor-pointer transition-shadow'>
                 <Icon icon='blog' width='58px' height='41px' />
                 <h4 className='text-2xl leading-snug text-blue-100 group-hover:text-blue mt-1.5 mb-3'>
                   Jedinečný soubor
@@ -87,7 +88,7 @@ export default function Home() {
                   Zjistěte, co vše je možné.
                   Consectetur adipiscing elit. Aenean&nbsp;euismod.
                 </p>
-                <div className='hidden group-hover:block mt-6'>
+                <div className='hidden lg:group-hover:block mt-6'>
                   <Button href='/o-nas' label='Prohlédnout' style='secondary'></Button>
                 </div>
               </div>
@@ -97,11 +98,11 @@ export default function Home() {
       </section>
 
       <section>
-        <div className='container pt-20 pb-24'>
+        <div className='container pt-20'>
           <h3 className='text-lg leading-6 font-bold text-left inline-block'>
             Nejnovější články<br /><span className='text-headlineWithAnnotation font-light'>Děje se</span>
           </h3>
-          <div className='border border-gray-600 mt-4.5 grid grid-cols-3'>
+          <div className='border border-gray-600 mt-4.5 grid grid-cols-1 md:grid-cols-3'>
             <Tile href={`/blog`} />
             <Tile href={`/blog`} />
             <Tile href={`/blog`} />
@@ -111,10 +112,11 @@ export default function Home() {
 
       <section>
         <div className='container'>
-          <div className='pt-12 flex'>
-            <img src='https://picsum.photos/590/384?v=3' width={'590px'} height={'590px'} className=''></img>
+          <div className='pt-16 flex'>
+            <div className='w-[590px] bg-footer bg-top'></div>
+            {/* <img src='https://picsum.photos/590/384?v=3' width={'590px'} height={'590px'} className=''></img> */}
 
-            <div className='ml-4 pt-20 pb-36 flex flex-col items-start'>
+            <div className='ml-4 pt-16 pb-36 flex flex-col items-start'>
               <h3 className='text-lg leading-6 font-bold text-left inline-block mb-3.5'>
                 Máte nějaký nápad, prosbu, připomínku?<br /><span className='text-headlineWithAnnotation font-light'>Chcete se zapojit?</span>
               </h3>
@@ -167,7 +169,10 @@ export default function Home() {
               <h5 className='text-blue text-lg font-bold leading-6 mb-3.5'>Ať vám nic neuteče</h5>
               <p className='text-base text-blue-200 leading-5 mb-5'>Novinky, rady a tipy budeme zasílat na váš e-mail</p>
               <div className='mb-5'>
-                <Input label='' name='mail' />
+                <Form onSubmit={false}>
+
+                  <Input label='' name='mail' />
+                </Form>
               </div>
               <p className='text-sm text-blue-200'>Kliknutím na „Přihlásit odběr“ souhlasím se <span className='text-underline'>zpracováním osobních údajů</span>.</p>
             </div>

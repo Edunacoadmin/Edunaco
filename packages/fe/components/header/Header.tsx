@@ -5,16 +5,17 @@ import { Icon } from '../icon/Icon'
 
 export const Header = () => {
   return (
-    <header className="container border-b border-b-gray-200 flex items-center justify-between">
+    <header className="container border-b border-b-gray-200 flex items-center justify-between px-5">
       <Link href={'/'}>
         <img
           src="/logo2x.png"
           alt="Logo edunaco"
+          className='w-[184px] md:w-[307px]'
           width={307}
           height={44}
         />
       </Link>
-      <nav className='flex items-center'>
+      <nav className='md:flex items-center hidden'>
         <ul className='flex items-center'>
           <Link href='/skoly'><li className=''>Školy</li></Link>
           <Link href='/skoly'><li className='text-blue ml-13.5'>Informace</li></Link>

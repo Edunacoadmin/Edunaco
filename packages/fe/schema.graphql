@@ -1,6 +1,48 @@
-"""Bojetice 101, Dobrovice, 29441"""
-input Address {
-  destination: String
+type BlogCommentItem implements CreatedAt & UpdatedAt {
+  author: String
+  blogItemId: String
+  createdAt: String
+  text: String
+  updatedAt: String
+}
+
+type BlogCommentItemResult implements Count & Error {
+  count: Int
+  data: BlogCommentItem
+  error: String
+}
+
+input BlogCommentItemUpdate {
+  author: String
+  text: String
+}
+
+type BlogItem implements CreatedAt & UpdatedAt {
+  comments: [BlogCommentItemResult]
+  createdAt: String
+  imageUri: String
+  itemId: String
+  text: String
+  title: String
+  updatedAt: String
+}
+
+type BlogItemResult implements Count & Error {
+  count: Int
+  data: BlogItem
+  error: String
+}
+
+input BlogItemUpdate {
+  imageUri: String
+  text: String
+  title: String
+}
+
+input CommentsFilter {
+  author: String
+  createdAt: String
+  text: String
 }
 
 type Coordinates {
@@ -11,21 +53,11 @@ interface Count {
   count: Int
 }
 
+interface CreatedAt {
+  createdAt: String
+}
+
 interface Error {
-  error: String
-}
-
-input Filter {
-  educationStyle: String
-  entity: String
-  evaluation: String
-  inRegistry: Boolean
-  type: String
-}
-
-type Geo implements Count & Error {
-  count: Int
-  data: [GeoItem]
   error: String
 }
 
@@ -36,26 +68,52 @@ type GeoItem {
   lon: Float
 }
 
+type GeoResult implements Count & Error {
+  count: Int
+  data: [GeoItem]
+  error: String
+}
+
 type Item {
   city: String
   combinedStudy: Boolean
   contact: String
+  distance: Float
   educationStyle: String
   email: String
-  entity: String
-  evaluation: String
+  fee: Boolean
   id: String
   inRegistry: Boolean
   individualTuition: Boolean
   location: Coordinates
   phone: String
-  portfolioCheck: Boolean
   postCode: String
+  remoteStudy: Boolean
   street: String
-  subEntity: String
+  subType: String
   title: String
   type: String
   www: String
+}
+
+type ItemResult implements Count & Error {
+  count: Int
+  data: Item
+  error: String
+}
+
+input ItemsFilter {
+  educationStyle: String
+  entity: String
+  evaluation: String
+  inRegistry: Boolean
+  type: String
+}
+
+type ItemsResult implements Count & Error {
+  count: Int
+  data: [Item]
+  error: String
 }
 
 input Location {
@@ -64,19 +122,24 @@ input Location {
 }
 
 type Mutation {
-  setGeo(id: String, location: Location): Object
+  addBlogCommentItem(item: NewBlogCommentItem): BlogCommentItemResult
+  addBlogItem(item: NewBlogItem): BlogItemResult
+  updateBlogCommentItem(id: ID!, item: BlogCommentItemUpdate): BlogCommentItemResult
+  updateBlogItem(id: ID!, item: BlogItemUpdate): BlogItemResult
+  updateGeoItem(id: String, location: Location): ItemResult
 }
 
-type Object implements Count & Error {
-  count: Int
-  data: Item
-  error: String
+input NewBlogCommentItem {
+  author: String!
+  blogItemId: String!
+  text: String!
 }
 
-type Objects implements Count & Error {
-  count: Int
-  data: [Item]
-  error: String
+input NewBlogItem {
+  imageUri: String
+  itemId: String!
+  text: String!
+  title: String!
 }
 
 input Page {
@@ -85,10 +148,14 @@ input Page {
 }
 
 type Query {
-  filterObjects(filter: Filter, page: Page, sort: Sort): Objects
-  geo(address: Address): Geo
-  object(id: String!): Object
-  searchObjects(page: Page, search: Search, sort: Sort): Objects
+  filterItems(filter: ItemsFilter, page: Page, sort: Sort): ItemsResult
+  getBlogItem(commentsFilter: CommentsFilter, commentsPage: Page, commentsSort: Sort, id: ID!): BlogItemResult
+
+  """Bojetice 101, Dobrovice, 29441"""
+  getGeo(address: String): GeoResult
+  getItem(id: String!): ItemResult
+  searchItemsByGeo(location: Location, page: Page): ItemsResult
+  searchItemsByText(page: Page, search: Search, sort: Sort): ItemsResult
   status: String
 }
 
@@ -99,4 +166,8 @@ input Search {
 input Sort {
   dir: Int
   field: String
+}
+
+interface UpdatedAt {
+  updatedAt: String
 }

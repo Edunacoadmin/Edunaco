@@ -1,7 +1,7 @@
 
-export async function generateMetadata({ params, searchParams }) {
+/*export async function generateMetadata({ params, searchParams }) {
   return { title: '...' }
-}
+}*/
 
 export default function Blog() {
   return (
